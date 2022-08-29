@@ -1,0 +1,207 @@
+:root{
+    --bg1 : #42032C;
+    --bg2 : #A62349;
+    --border1 : #F1EFDC;
+    --text : #E6D2AA;
+    --primary : #FEC260;
+    --secondary : #2A0944;
+    --warning : #B33030;
+    --move: #42855B;
+}
+body{
+    background-color: var(--bg1);
+}
+
+.note-app{
+    text-align: center;
+}
+
+.header{
+    border-bottom: 1px solid whitesmoke;
+}
+.wrapper{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    margin: 0 auto;
+}
+.logo{
+    flex-grow: 3;
+}
+.search{
+    flex-grow: 2;
+    margin: auto 0;
+    text-align: center;
+}
+.search input{
+    float: right;
+    background: none;
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    border: 1px solid white;
+    color: white;
+}
+.search input:focus{
+    border: 3px solid white;
+    color: white;
+}
+
+
+.form{
+    width: 100vw;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.note-input{
+    width: 85%;
+    margin: 0 auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    padding: 20px 0;
+    box-shadow: 13px 2px 38px 1px rgba(0,0,0,0.77);
+    -webkit-box-shadow: 13px 2px 38px 1px rgba(0,0,0,0.77);
+    -moz-box-shadow: 13px 2px 38px 1px rgba(0,0,0,0.77);
+}
+.note-input input ,.note-input textarea  {
+    border: none;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: var(--text);
+}
+
+.note-input textarea{
+    border-radius: 5px;
+    padding-top: 20px;
+    max-height: max-content;
+    font-size: 15px;
+    height: 100px;
+}
+.note-input button{
+    border: none;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50%;
+    background-color: var(--bg2);
+    color: white;
+    transform: translateY(-12px);
+    transform: translateX(-6px);
+    transition-duration: 0.4s;
+    box-shadow: 6px 6px 6px 0px rgba(202, 158, 36, 0.75);
+-webkit-box-shadow: 6px 6px 6px 0px rgba(202, 158, 36, 0.75);
+-moz-box-shadow: 6px 6px 6px 0px rgba(202, 158, 36, 0.75);
+}
+.note-input button:hover{
+    transform: translateY(12px);
+    transform: translateX(6px);
+    box-shadow: none;
+    color: rgba(177, 168, 168, 0.788);
+}
+
+.note-input button:active{
+    color: rgba(177, 168, 168, 0.788);
+    transform: translateY(12px);
+    transform: translateX(6px);
+    border-radius: 1px solid black;
+    box-shadow: 4px 2px 37px 0px rgba(0,0,0,0.75) inset;
+    -webkit-box-shadow: 4px 2px 37px 0px rgba(0,0,0,0.75) inset;
+    -moz-box-shadow: 4px 2px 37px 0px rgba(0,0,0,0.75) inset;
+    border: 2px solid #E6D2AA;
+}
+
+
+.note-app h1{
+    color: white;
+    width: 100%;
+}
+
+.note-list{
+    padding: 20px;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    box-shadow: 13px 2px 38px 1px rgba(0,0,0,0.77);
+    -webkit-box-shadow: 13px 2px 38px 1px rgba(0,0,0,0.77);
+    -moz-box-shadow: 13px 2px 38px 1px rgba(0,0,0,0.77);
+}
+.note-list h1{
+    text-align: center;
+}
+.note-item{
+    margin: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    width: 300px;
+}
+.note-content{
+    background-color: var(--bg2);
+    border-radius: 10px;   
+    padding: 20px;
+    overflow: hidden;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    color: var(--text);
+}
+.note-item__body{
+    min-height: max-content;
+}
+.button-wrapper{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    bottom: 20px;
+}
+.button-wrapper button{
+    background: none;
+    border: none;
+    font-size: large;
+}
+.btn-delete{
+    color: var(--secondary);
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+}
+.btn-delete ion-icon {
+    font-size: 32px;
+}
+.btn-delete ion-icon:hover {
+    color: var(--warning);
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.btn-archieve ion-icon {
+    font-size: 32px;
+}
+.btn-archieve{
+    font-weight: 700;
+    color: var(--move);
+    cursor: pointer;
+    color: white;
+}
+.btn-archieve ion-icon:hover {
+    color: var(--warning);
+    background-color: var(--primary);
+    border-radius: 10px;
+}
