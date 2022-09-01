@@ -1,45 +1,52 @@
 import React from "react";
-
 class InputForm extends React.Component{
     constructor(props){
         super(props);
 
         this.state = {
             title : '',
-            createdAt : '',
-            body : '',
+            body : ''
         }
 
         this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
-        this.onDateChangeEventHandler = this.onDateChangeEventHandler.bind(this);
         this.onBodyChangeEventHandler = this.onBodyChangeEventHandler.bind(this);
         this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
     }
 
     onTitleChangeEventHandler(event){
-        this.setState(() => {
-            return {
-                title : event.target.value
-            }
-        })
-    }
-    onDateChangeEventHandler(event){
-        this.setState(() => {
-            return{
-                createdAt : event.target.value
-            }
-        })
+        const getTitle = event.target.value
+        if (getTitle.length <= 50) { 
+            this.setState(() => {
+                return {
+                    title : getTitle
+                }
+            })      
+        }
+    
+            
     }
     onBodyChangeEventHandler(event){
-        this.setState(() => {
-            return{
-                body : event.target.value
-            }
-        })
+        const getBody = event.target.value
+
+        if (getBody.length <= 250) {
+            this.setState(() => {
+                return{
+                    body : event.target.value
+                }
+            })   
+        }   
+        
     }
     onSubmitEventHandler(event){
         event.preventDefault();
         this.props.addNote(this.state);
+        this.setState(() => {
+            return {
+                title : '',
+                createdAt : '',
+                body : ''
+            }
+        })
     }
 
     render(){
@@ -47,9 +54,10 @@ class InputForm extends React.Component{
             <div className="form">
                 <form className="note-input" onSubmit={this.onSubmitEventHandler}>
                 <h1>Add Your Note</h1>
-                    <input type="text" placeholder="Add your Note title" autoFocus value={this.state.title} onChange={this.onTitleChangeEventHandler}/>
-                    <input type="date" value={this.state.createdAt} onChange={this.onDateChangeEventHandler} />
-                    <textarea type="text" placeholder="Describe your notes" value={this.state.body} onChange={this.onBodyChangeEventHandler} /><br/>
+                    <p>Character Left : {50- this.state.title.length}</p>
+                    <input type="text" placeholder="Add your Note title" value={this.state.title} onChange={this.onTitleChangeEventHandler} autoFocus required/> <br/>
+                    <p>Character Left : {250- this.state.body.length}</p>
+                    <textarea type="text" placeholder="Describe your notes" value={this.state.body} onChange={this.onBodyChangeEventHandler}  required/><br/>
                     <button type="submit">Tambah</button>
                 </form>
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import ArchieveItem from "./ArchieveItem";
 
 
-function ArchieveList({notes, onDelete, onArchive}) {
+function ArchieveList({notes, onDelete, onMove}) {
     return(
         <div className="note-list">
         <h1>Archieves</h1>
@@ -11,7 +11,7 @@ function ArchieveList({notes, onDelete, onArchive}) {
                     <ArchieveItem 
                     key={note.id} 
                     id = {note.id}
-                    onArchive = {onArchive}
+                    onMove = {onMove}
                     onDelete = {onDelete}
                     {...note} />
                 ))

@@ -1,15 +1,12 @@
 import React from "react";
 
-function Header({search}) {
+function Header() {
+    
     return(
         <div className="header">
             <div className="wrapper">
                 <div className="logo">
                     <h1>Your Notes</h1>
-                </div>
-                
-                <div className="search">
-                    <input type="text" placeholder="Find Your Notes"></input>
                 </div>
             </div>
         </div>

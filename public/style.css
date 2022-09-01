@@ -30,15 +30,13 @@ body{
     flex-grow: 3;
 }
 .search{
-    flex-grow: 2;
-    margin: auto 0;
+    margin: 20px 0;
     text-align: center;
 }
 .search input{
-    float: right;
     background: none;
     padding: 20px;
-    width: 250px;
+    width: 50%;
     border-radius: 15px;
     border: 1px solid white;
     color: white;
@@ -120,6 +118,12 @@ body{
     border: 2px solid #E6D2AA;
 }
 
+.note-input p {
+    width: 85%;
+    color: whitesmoke;
+    text-align: right;
+    padding-left: 10px;
+}
 
 .note-app h1{
     color: white;
@@ -205,3 +209,5 @@ body{
     background-color: var(--primary);
     border-radius: 10px;
 }
+
+.is-hidden { display: none; }
